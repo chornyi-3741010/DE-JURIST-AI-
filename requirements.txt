@@ -1,0 +1,8 @@
+openai>=1.100.0
+python-dotenv>=1.0.0
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+Pillow>=9.0.0
+pytesseract>=0.3.10
+pyinstaller>=5.9.0
+pytest>=7.0.0
