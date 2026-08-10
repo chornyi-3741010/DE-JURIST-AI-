@@ -9,6 +9,12 @@ DE-JURIST AI — Windows Desktop Assistent für deutsche Rechts- und Verwaltungs
 - Lokale Dokumentenverarbeitung (PDF/DOCX/TXT/PNG/JPG) mit optionaler OCR.
 - Upload an OpenAI nur nach explizitem Opt‑in und Bestätigung.
 
+## Build EXE (Windows)
+
+1. Installieren Sie die Abhängigkeiten: `install.bat`.
+2. Optional: installieren Sie Tesseract für OCR.
+3. Erstellen Sie die EXE mit `build_exe.bat`. Das Ergebnis liegt im `dist\` Verzeichnis.
+
 
 ## Что уже есть
 - отдельное окно Windows;
