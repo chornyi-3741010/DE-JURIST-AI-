@@ -1,6 +1,14 @@
-# DE-JURIST AI v1.0
+# DE-JURIST AI Desktop
 
-Настольный Windows-прототип персонального юридического AI-агента для Германии.
+DE-JURIST AI — Windows Desktop Assistent für deutsche Rechts- und Verwaltungsangelegenheiten.
+
+## Wichtige Änderungen in diesem Branch
+
+- Produktionstaugliche Architektur (app/ package).
+- Lokale SQLite‑Datenbank für Fälle, Dokumente, Fristen und Nachrichten.
+- Lokale Dokumentenverarbeitung (PDF/DOCX/TXT/PNG/JPG) mit optionaler OCR.
+- Upload an OpenAI nur nach explizitem Opt‑in und Bestätigung.
+
 
 ## Что уже есть
 - отдельное окно Windows;

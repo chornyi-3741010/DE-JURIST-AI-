@@ -8,7 +8,7 @@ if errorlevel 1 (
   exit /b 1
 )
 echo.
-echo DE-JURIST AI установлен.
-echo Перед запуском задайте OPENAI_API_KEY в переменных среды Windows.
-echo Затем запустите run.bat
+echo DE-JURIST AI installiert.
+echo Bitte setzen Sie OPENAI_API_KEY als Umgebungsvariable, wenn Online-Funktionen genutzt werden sollen.
+echo Then run run.bat
 pause
