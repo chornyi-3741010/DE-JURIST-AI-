@@ -10,15 +10,24 @@ from .database import init_db, create_case, list_cases, add_document, list_docum
 from .document_manager import detect_type, extract_text
 from .ai_client import LLMClient
 
-APP_DIR = Path(__file__).resolve().parent.parent
-PROMPT_PATH = APP_DIR / 'resources' / 'system_prompt.txt'
+import sys
+
+# Support PyInstaller _MEIPASS path for bundled resources
+if getattr(sys, 'frozen', False):
+    BASE_PATH = Path(sys._MEIPASS)
+else:
+    BASE_PATH = Path(__file__).resolve().parent.parent
+PROMPT_PATH = BASE_PATH / 'resources' / 'system_prompt.txt'
 
 llm = LLMClient()
 
 
 def load_prompt():
-    if PROMPT_PATH.exists():
-        return PROMPT_PATH.read_text(encoding='utf-8')
+    try:
+        if PROMPT_PATH.exists():
+            return PROMPT_PATH.read_text(encoding='utf-8')
+    except Exception as e:
+        logger.exception('Failed to load prompt: %s', e)
     return ''
 
 
