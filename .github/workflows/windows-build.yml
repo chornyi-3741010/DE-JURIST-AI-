@@ -5,6 +5,10 @@ on:
     branches: [ chornyi-3741010-refactor-windows-desktop, main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-windows:
@@ -37,3 +41,12 @@ jobs:
         with:
           name: DE-JURIST-AI-windows-exe
           path: releases/DE-JURIST-AI-1.0.0/dist/DE-JURIST-AI.exe
+
+      - name: Publish GitHub Release
+        if: github.event_name != 'pull_request'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: desktop-latest
+          name: DE-JURIST AI Desktop
+          prerelease: true
+          files: releases/DE-JURIST-AI-1.0.0/dist/DE-JURIST-AI.exe
