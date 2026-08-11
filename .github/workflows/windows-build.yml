@@ -30,7 +30,7 @@ jobs:
 
       - name: Build EXE with PyInstaller
         run: |
-          python -m PyInstaller --noconfirm --onefile --windowed --name DE-JURIST-AI app\\main.py --add-data "${{ github.workspace }}/resources/system_prompt.txt;resources" --distpath "releases/DE-JURIST-AI-1.0.0/dist" --workpath "releases/DE-JURIST-AI-1.0.0/build" --specpath "releases/DE-JURIST-AI-1.0.0/specs" --clean
+          python -m PyInstaller --noconfirm --onefile --windowed --name DE-JURIST-AI main.ru --add-data "${{ github.workspace }}/resources/system_prompt.txt;resources" --distpath "releases/DE-JURIST-AI-1.0.0/dist" --workpath "releases/DE-JURIST-AI-1.0.0/build" --specpath "releases/DE-JURIST-AI-1.0.0/specs" --clean
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
